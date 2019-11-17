@@ -14,13 +14,13 @@ Kafka专为分布式高吞吐量系统而设计。 Kafka往往工作得很好，
 
 在点对点系统中，消息被保留在队列中。 一个或多个消费者可以消耗队列中的消息，但是特定消息只能由最多一个消费者消费。 一旦消费者读取队列中的消息，它就从该队列中消失。 该系统的典型示例是订单处理系统，其中每个订单将由一个订单处理器处理，但多个订单处理器也可以同时工作。 下图描述了结构。
 
-![send-to-resclver](/Users/songzhewen/Documents/open-source/IMarked/images/send-to-resevler.png)
+![send-to-resclver](https://github.com/szweemedlock/IMarked/blob/master/images/send-to-resevler.png)
 
 #### 发布-订阅消息系统
 
 在发布 - 订阅系统中，消息被保留在主题中。 与点对点系统不同，消费者可以订阅一个或多个主题并使用该主题中的所有消息。 在发布 - 订阅系统中，消息生产者称为发布者，消息使用者称为订阅者。 一个现实生活的例子是Dish电视，它发布不同的渠道，如运动，电影，音乐等，任何人都可以订阅自己的频道集，并获得他们订阅的频道时可用。
 
-![send-to-topic](/Users/songzhewen/Documents/open-source/IMarked/images/send-to-topic.png)
+![send-to-topic](https://github.com/szweemedlock/IMarked/blob/master/images/send-to-topic.png)
 
 #### 什么是kafka
 
@@ -113,7 +113,7 @@ Kafka以快速，可靠，持久，容错和零停机的方式提供基于pub-su
 - 以上流程将重复，直到消费者停止请求。
 - 消费者可以随时回退/跳到所需的主题偏移量，并阅读所有后续消息。
 
-#####队列消息/用户组的工作流
+##### 队列消息/用户组的工作流
 
 在队列消息传递系统而不是单个消费者中，具有相同组ID 的一组消费者将订阅主题。 简单来说，订阅具有相同 Group ID 的主题的消费者被认为是单个组，并且消息在它们之间共享。 让我们检查这个系统的实际工作流程。
 
@@ -125,7 +125,7 @@ Kafka以快速，可靠，持久，容错和零停机的方式提供基于pub-su
 - 一旦消费者的数量超过分区的数量，新消费者将不会接收任何进一步的消息，直到现有消费者取消订阅任何一个消费者。 出现这种情况是因为Kafka中的每个消费者将被分配至少一个分区，并且一旦所有分区被分配给现有消费者，新消费者将必须等待。
 - 此功能也称为使用者组。 同样，Kafka将以非常简单和高效的方式提供两个系统中最好的。
 
-#####ZooKeeper的作用
+##### ZooKeeper的作用
 
 Apache Kafka的一个关键依赖是Apache Zookeeper，它是一个分布式配置和同步服务。 Zookeeper是Kafka代理和消费者之间的协调接口。 Kafka服务器通过Zookeeper集群共享信息。 Kafka在Zookeeper中存储基本元数据，例如关于主题，代理，消费者偏移(队列读取器)等的信息。
 
