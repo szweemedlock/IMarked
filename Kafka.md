@@ -53,7 +53,7 @@ Kafka是一个统一的平台，用于处理所有实时数据Feed。 Kafka支�
 
 在深入了解Kafka之前，您必须了解主题，经纪人，生产者和消费者等主要术语。 下图说明了主要术语，表格详细描述了图表组件。
 
-![]()
+![kafka](https://github.com/szweemedlock/IMarked/blob/master/images/kafka.png)
 
 在上图中，主题配置为三个分区。 分区1具有两个偏移因子0和1.分区2具有四个偏移因子0,1,2和3.分区3具有一个偏移因子0.副本的id与承载它的服务器的id相同。
 
@@ -78,7 +78,7 @@ Kafka是一个统一的平台，用于处理所有实时数据Feed。 Kafka支�
 
 看看下面的插图。 它显示Kafka的集群图。
 
-![]()
+![ecosystem](https://github.com/szweemedlock/IMarked/blob/master/images/ecosystem.png)
 
 | 组件          | 说明                                                         |
 | ------------- | ------------------------------------------------------------ |
@@ -130,28 +130,3 @@ Kafka以快速，可靠，持久，容错和零停机的方式提供基于pub-su
 Apache Kafka的一个关键依赖是Apache Zookeeper，它是一个分布式配置和同步服务。 Zookeeper是Kafka代理和消费者之间的协调接口。 Kafka服务器通过Zookeeper集群共享信息。 Kafka在Zookeeper中存储基本元数据，例如关于主题，代理，消费者偏移(队列读取器)等的信息。
 
 由于所有关键信息存储在Zookeeper中，并且它通常在其整体上复制此数据，因此Kafka代理/ Zookeeper的故障不会影响Kafka集群的状态。 Kafka将恢复状态，一旦Zookeeper重新启动。 这为Kafka带来了零停机时间。Kafka代理之间的领导者选举也通过使用Zookeeper在领导者失败的情况下完成。
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
