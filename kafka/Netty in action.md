@@ -28,3 +28,11 @@
 
 #### ChannelInboundHandler接口
 
+![channelInbound](/Users/songzhewen/Downloads/channelInBound.png)
+
+
+
+simple
+
+![simple-channel](/Users/songzhewen/Downloads/simpleChannel.png)
+
