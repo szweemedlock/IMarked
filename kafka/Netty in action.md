@@ -72,3 +72,7 @@ Netty将使用*WARN*级别的日志消息记录未释放的资源，但是以这
 
 #### ChannelHandlerContext接口
 
+
+
+![relate-with-channel](https://raw.githubusercontent.com/szweemedlock/IMarked/master/images/relate-with-channel.png)
+
