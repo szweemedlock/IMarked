@@ -13,7 +13,7 @@ Channel接口的状态模型：
 
 当这些状态发生改变时，将会生成对应的事件。这些事件将会被转发给ChannelPipeline中的ChannelHandler，其随后对他们做出响应。
 
-![channel-status-model](https://github.com/szweemedlock/IMarked/blob/master/images/channel-status-model.png)
+![channel-status-model](https://raw.githubusercontent.com/szweemedlock/IMarked/master/images/channel-status-model.png)
 
 #### ChannelHandler的生命周期
 
@@ -38,13 +38,13 @@ ChannelHandler接口定义的生命周期操作：
 
 当某个ChannelInboundHandler的实现重写*channelRead*方法时它将负责显式地释放与池化的ByteBuf实例相关的内存。
 
-![channelInbound](https://github.com/szweemedlock/IMarked/blob/master/images/channelInbounderAdapter.png)
+![channelInbound](https://raw.githubusercontent.com/szweemedlock/IMarked/master/images/channelInbounderAdapter.png)
 
 
 
 Netty将使用*WARN*级别的日志消息记录未释放的资源，但是以这种方式管理资源可能很繁琐。下面是一个更加简单的方式。
 
-![simple-channel](https://github.com/szweemedlock/IMarked/blob/master/images/simpleChannelInboundHandler.png)
+![simple-channel](https://raw.githubusercontent.com/szweemedlock/IMarked/master/images/simpleChannelInboundHandler.png)
 
 > 由于SimpleChannelInboundHandler会自动释放资源，所以不应该存储指向任何消息的引用供将来使用，因为这些引用都将会失效。
 
@@ -58,7 +58,7 @@ Netty将使用*WARN*级别的日志消息记录未释放的资源，但是以这
 
 #### ChannelHandler适配器
 
-![channelHandlerAdapter](https://github.com/szweemedlock/IMarked/blob/master/images/ChannelHandlerAdapter.png)
+![channelHandlerAdapter](https://raw.githubusercontent.com/szweemedlock/IMarked/master/images/ChannelHandlerAdapter.png)
 
 > 在ChannelInboundHandlerAdapter和ChannelOutboundAdapter中所提供的方法体调用了其相关联的ChannelHandlerContext上的等效方法，从而将事件转发到了ChannelPipline中的下一个ChannelHandler中。
 
